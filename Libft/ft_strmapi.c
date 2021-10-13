@@ -10,9 +10,10 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     new = (char *)malloc(sizeof(char) * (len + 1));
     if (!new)
          return (NULL);
+     i = 0;
     while (s[i])
     {
-           new[i] = f(i, &s[i]);
+           new[i] = f(i, s[i]);
          i++;
     }
     new[i] = '\0';
