@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 16:42:17 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/18 16:42:18 by bmiguel-         ###   ########.fr       */
+/*   Created: 2021/10/18 17:01:56 by bmiguel-          #+#    #+#             */
+/*   Updated: 2021/10/18 17:01:57 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int arg)
+#include "libft.h"
+
+char *ft_strcpy(char *dest, const char *src)
 {
-    if (arg >= '0' && arg <= '9')
-        return (1);
-    return (0);
+	int j;
+
+	j = 0;
+	while (src[j])
+	{
+		dest[j] = src[j];
+		j++;
+	}
+	dest[j] = '\0';
+	return (dest);
 }
-
-
-/* 
-#include <stdio.h>
-#include <ctype.h>
- int main()
-{
-    char test = '9';
-
-    printf("%d\n", ft_isdigit(test));
-    printf("%d", isdigit(test));
-} */
