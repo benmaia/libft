@@ -24,4 +24,4 @@ int main()
     char dest[] = "abcdefghklmnop";
 
     printf("%s", ft_bzero(dest, 2));
-}*/
+} */

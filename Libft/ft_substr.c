@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char    *ft_strsub(char const *s, unsigned int start, size_t len)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
     size_t size;
     int i;
@@ -28,5 +28,5 @@ int main ()
     int start = 0;
     int len = 14;
 
-    printf("%s", ft_strsub(src, start, len));
+    printf("%s", ft_substr(src, start, len));
 } */
