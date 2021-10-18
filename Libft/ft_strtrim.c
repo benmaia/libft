@@ -8,7 +8,7 @@ char    *ft_strtrim(char const *s)
     int len;
 
     i = 0;
-    while(s[i] == ' ' || s[i] == '\n' || s[i] == '\t' && s[i])
+    while((s[i] == ' ' || s[i] == '\n' || s[i] == '\t') && s[i])
         i++;
     j = 0;
     while(s[j])
