@@ -73,5 +73,7 @@ char    *ft_strjoin(char const *s1, char const *s2);
 
 char    *ft_strtrim(char const *s);
 
+char    **ft_split(char const *s, char c);
+
 
 #endif
