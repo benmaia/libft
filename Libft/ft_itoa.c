@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 17:01:56 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/18 17:01:57 by bmiguel-         ###   ########.fr       */
+/*   Created: 2021/10/19 15:14:13 by bmiguel-          #+#    #+#             */
+/*   Updated: 2021/10/19 15:29:12 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strlcpy(char *dest, const char *src, size_t size)
+char    *ft_itoa(int n)
 {
-	int j;
-	int len;
+    char    *dest;
+    char    *src;
+    int i;
+    int len;
 
-	len = ft_strlen(src);
-	j = 0;
-	while (src[j] && j < size - 1)
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return (len);
+    src = ft_putnbr_fd(n, 1);
+    len = ft_strlen(src);
+    if(!(dest = malloc(sizeof(char) * len + 1)))
+        return (NULL);
+    while(src[i])
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
+    return (dest);
+}
+
+int main()
+{
+    int n = 5000;
+    printf("%s", ft_itoa(n));
 }

@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdio.h>
 
 int ft_atoi (const char *str);
 
@@ -74,6 +75,8 @@ char    *ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s);
 
 char    **ft_split(char const *s, char c);
+
+void    *ft_calloc(size_t n, size_t size);
 
 
 #endif

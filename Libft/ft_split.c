@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 00:58:27 by marvin            #+#    #+#             */
-/*   Updated: 2021/10/19 00:58:27 by marvin           ###   ########.fr       */
+/*   Updated: 2021/10/19 14:49:32 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int  ft_numberofwords(char const *s, char c)
     }
     while(s[i])
     {
-        while(s[i == c])
+        while(s[i] == c)
         {
             i++;
             if(s[i] && s[i] != c)
@@ -85,7 +85,7 @@ char    **ft_split(char const *s, char c)
     return (new);
 }
 
-/*
+
 #include <stdio.h>
 int main()
 {
@@ -93,6 +93,6 @@ int main()
     char c = '*';
     char *dest;
 
-    dest = *ft_strsplit(s, c);
+    dest = *ft_split(s, c);
     printf("%p", dest);
-} */
+} 
