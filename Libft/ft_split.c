@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 00:58:27 by marvin            #+#    #+#             */
-/*   Updated: 2021/10/19 14:49:32 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:16:57 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ static int  ft_numberofwords(char const *s, char c)
         }
         i++;
     }
-    return (words);
+    return(words);
 }
 
 static int  ft_lenwords(char const *s, char c)
 {
-    int len;
+    int size;
 
-    len = 0;
-    while(s[len] && s[len != c])
+    size = 0;
+    while(s[size] && s[size != c])
     {
-        len++;
+        size++;
     }
-    return (len);
+    return(size);
 }
 
 char    **ft_split(char const *s, char c)
@@ -85,14 +85,29 @@ char    **ft_split(char const *s, char c)
     return (new);
 }
 
-
-#include <stdio.h>
-int main()
+int				main(void)
 {
-    char const s[] = "*hello*fellow***students*";
-    char c = '*';
-    char *dest;
+	char	**tab;
+	unsigned int	i;
 
-    dest = *ft_split(s, c);
-    printf("%p", dest);
-} 
+	i = 0;
+	tab = ft_split("      split       this for   me  !", ' ');
+	if (!tab[0])
+		ft_putendl_fd("ok\n", 1);
+	while (tab[i] != NULL)
+	{
+		ft_putendl_fd(tab[i], 1);
+		i++;
+	}
+}
+
+// #include <stdio.h>
+// int main()
+// {
+//     char const s[] = "*hello*fellow***students*";
+//     char c = '*';
+//     char *dest;
+
+//     dest = *ft_split(s, c);
+//     printf("%p", dest);
+// } 

@@ -6,39 +6,64 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:14:13 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/19 17:22:27 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/20 20:16:15 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int nb_len(n)
+{
+    int counter;
+
+    counter = 0;
+    if(n < 0)
+    {
+        n *= -1;
+        counter++;
+    }
+    while (n > 0)
+    {
+        n = n / 10;
+        counter++;
+    }
+    return(counter);
+}
 
 char    *ft_itoa(int n)
 {
     char    *dest;
-    int len;
-    int m;
+    int size;
+    long nb;
 
-    m = n;
-    while(m > 0)
+    size = nb_len(n);
+    nb = n;
+    if(!(dest = (char *)malloc(sizeof(char) * size + 1)))
+        return(NULL);
+    dest[size] = '\0';
+    size--;
+    if(nb == 0)
+        dest[0] = '0';
+    if(nb == -2147483648)
     {
-        m = m / 10;
-        len++;
+        dest = "-2147483648";
     }
-    m = n;
-    if(!(dest = malloc(sizeof(char) * len + 1)))
-        return (NULL);
-    while(len > 0)
+    if(nb < 0)
     {
-        
+        dest[0] = '-';
+        nb *= -1;
     }
-    return (dest);
+    while(nb > 0)
+    {
+        dest[size] = (nb % 10) + '0';
+        nb = nb / 10;
+        size--;
+    }
+    return(dest);
 }
-
-
 
 int main()
 {
-    int n = 5000;
+    int n = -2147483648;
     printf("%s", ft_itoa(n));
 }
