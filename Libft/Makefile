@@ -16,7 +16,7 @@ ft_strchr.c ft_strlcpy.c ft_strmapi.c\
 ft_strdup.c ft_split.c ft_calloc.c ft_itoa.c\
 ft_strlen.c ft_strncmp.c ft_substr.c ft_strtrim.c\
 ft_strnstr.c ft_strrchr.c ft_strjoin.c\
-ft_tolower.c ft_toupper.c
+ft_tolower.c ft_toupper.c ft_strlcat.c ft_strncat.c
 
 #Object files
 OBJ	=	$(SRC:.c=.o)
