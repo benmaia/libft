@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 00:58:27 by marvin            #+#    #+#             */
-/*   Updated: 2021/10/20 20:16:57 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:59:35 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,29 +85,3 @@ char    **ft_split(char const *s, char c)
     return (new);
 }
 
-int				main(void)
-{
-	char	**tab;
-	unsigned int	i;
-
-	i = 0;
-	tab = ft_split("      split       this for   me  !", ' ');
-	if (!tab[0])
-		ft_putendl_fd("ok\n", 1);
-	while (tab[i] != NULL)
-	{
-		ft_putendl_fd(tab[i], 1);
-		i++;
-	}
-}
-
-// #include <stdio.h>
-// int main()
-// {
-//     char const s[] = "*hello*fellow***students*";
-//     char c = '*';
-//     char *dest;
-
-//     dest = *ft_split(s, c);
-//     printf("%p", dest);
-// } 

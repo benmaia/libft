@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:41:24 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/18 16:41:25 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:32:22 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,21 @@ int ft_atoi (const char *str)
 
     i = 0;
     sign = 1;
-    while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
-           str[i] == '\v' || str[i] == '\f' || str[i] == '\r' || str[i])
+    while ((str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
+           str[i] == '\v' || str[i] == '\f' || str[i] == '\r') && str[i])
                 i++;
-    while (str[i] == '-' || str[i] == '+')
+    if ((str[i] == '-' || str[i] == '+') && str[i])
     {
         if (str[i] == '-')
         {
-            sign *= - 1;
+            sign = - 1;
         }
         i++;
     }
-    while (str[i] >= '0' && str[i] <= '9')
+    new = 0;
+    while ((str[i] >= '0' && str[i] <= '9') && str[i])
     {
-        new = new * 10 + (str[i] - '0');
+        new = (new * 10) + (str[i] - '0');
         i++;
     }
     return (sign * new);

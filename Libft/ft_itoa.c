@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:14:13 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/20 20:16:15 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:12:34 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,4 @@ char    *ft_itoa(int n)
         size--;
     }
     return(dest);
-}
-
-int main()
-{
-    int n = -2147483648;
-    printf("%s", ft_itoa(n));
 }
