@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:16:13 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/18 17:16:14 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:33:52 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t		i;
-	size_t		j;
+	size_t	i;
+	size_t	j;
 
 	if (*needle == '\0' || needle == NULL)
 		return ((char *)haystack);
@@ -29,20 +29,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			{
 				if (needle[j + 1] == '\0')
 					return ((char *)&haystack[i]);
-                j++;
+				j++;
 			}
 		}
 		i++;
 	}
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	char haystack[] = "ola e o meu nome e Valete";
-	char needle[] = "e";
-
-	printf("%s", ft_strnstr(haystack, needle, 24));
-} */

@@ -6,15 +6,15 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:43:44 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/18 16:43:45 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:21:16 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str == NULL)

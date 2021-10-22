@@ -6,58 +6,51 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:14:13 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/21 21:12:34 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/22 18:48:03 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int nb_len(n)
+size_t	nb_len(int nb)
 {
-    int counter;
+	int	len;
 
-    counter = 0;
-    if(n < 0)
-    {
-        n *= -1;
-        counter++;
-    }
-    while (n > 0)
-    {
-        n = n / 10;
-        counter++;
-    }
-    return(counter);
+	len = 0;
+	if (nb <= 0)
+		len++;
+	while (nb)
+	{
+		len++;
+		nb = nb / 10;
+	}
+	return (len);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    char    *dest;
-    int size;
-    long nb;
+	int		len;
+	char	*str;
+	long	nb;
 
-    size = nb_len(n);
-    nb = n;
-    if(!(dest = (char *)malloc(sizeof(char) * size + 1)))
-        return(NULL);
-    dest[size] = '\0';
-    size--;
-    if(nb == 0)
-        dest[0] = '0';
-    if(nb == -2147483648)
-    {
-        dest = "-2147483648";
-    }
-    if(nb < 0)
-    {
-        dest[0] = '-';
-        nb *= -1;
-    }
-    while(nb > 0)
-    {
-        dest[size] = (nb % 10) + '0';
-        nb = nb / 10;
-        size--;
-    }
-    return(dest);
+	len = nb_len(n);
+	nb = n;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	if (nb < 0)
+	{
+		str[0] = '-';
+		nb = -nb;
+	}
+	if (nb == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nb)
+	{
+		str[len] = nb % 10 + '0';
+		len--;
+		nb = nb / 10;
+	}
+	return (str);
 }

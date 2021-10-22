@@ -6,22 +6,23 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:02:15 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/18 17:02:16 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:24:21 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
-    int i;
-    if (s)
-    {
-        i = 0;
-        while(s[i])
-        {
-            f(&s[i]);
-            i++;
-        }
-    }
+	int	i;
+
+	if (s)
+	{
+		i = 0;
+		while (s[i])
+		{
+			f(&s[i]);
+			i++;
+		}
+	}
 }

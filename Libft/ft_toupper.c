@@ -6,25 +6,13 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:17:24 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/18 17:17:25 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:44:55 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int arg)
+int	ft_toupper(int arg)
 {
-    if (arg>= 'a' && arg<= 'z')
-        return (arg - 32);
-    return (arg);
+	if (arg >= 'a' && arg <= 'z')
+		return (arg - 32);
+	return (arg);
 }
-
-/*
-#include <stdio.h>
-#include <ctype.h>
-
- int main()
-{
-    char test = 'a';
-
-    printf("%d\n", ft_toupper(test));
-    printf("%d", toupper(test));
-} */
