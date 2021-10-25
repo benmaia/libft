@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 19:48:06 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:48:07 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/25 16:39:47 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+
+typedef struct s_list
+{
+    void            *content;
+    struct s_list   *next;
+}               t_list;
 
 int		ft_atoi(const char *str);
 
