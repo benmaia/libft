@@ -15,19 +15,19 @@
 static int	nb_words(const char *str, char c)
 {
 	int	i;
-	int	trigger;
+	int	flag;
 
 	i = 0;
-	trigger = 0;
+	flag = 0;
 	while (*str)
 	{
-		if (*str != c && trigger == 0)
+		if (*str != c && flag == 0)
 		{
-			trigger = 1;
+			flag = 1;
 			i++;
 		}
 		else if (*str == c)
-			trigger = 0;
+			flag = 0;
 		str++;
 	}
 	return (i);
