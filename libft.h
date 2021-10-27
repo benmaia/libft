@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 19:48:06 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/25 16:39:47 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/27 22:29:07 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,17 @@ char	**ft_split(char const *s, char c);
 void	*ft_calloc(size_t n, size_t size);
 
 char	*ft_itoa(int n);
+
+t_list  *ft_lstnew(void *content);
+
+void ft_lstadd_front(t_list **lst, t_list *new);
+
+int ft_lstsize(t_list *lst);
+
+t_list  *ft_lstlast(t_list *lst);
+
+void    ft_lstadd_back(t_list **lst, t_list *new);
+
+void    ft_lstdelone(t_list *lst, void (*del)(void *));
+
 #endif

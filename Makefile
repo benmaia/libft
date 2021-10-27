@@ -21,13 +21,21 @@ ft_tolower.c ft_toupper.c ft_strlcat.c ft_strncat.c
 #Object files
 OBJ	=	$(SRC:.c=.o)
 
+B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+ft_lstadd_back.c ft_lstdelone.c
+
+B_OBJ =	$(B:.c=.o)
+
 all:	$(NAME)
+
+bonus:	$(B_OBJ)
+		ar rcs $(NAME) $(B_OBJ)
 
 $(NAME):	$(OBJ)
 			ar rcs $(NAME) $(OBJ)
 
 clean:
-			$(RM) $(OBJ)
+			$(RM) $(OBJ) $(B_OBJ)
 
 fclean:	clean
 			$(RM) $(NAME)
