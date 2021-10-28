@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:08:41 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/22 19:36:50 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/10/28 17:06:59 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		z;
 	char	*dest;
 
+	if (!s1 || !set)
+		return (NULL);
 	a = 0;
 	while (s1[a] && c_set(s1[a], set))
 		a++;
