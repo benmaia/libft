@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 19:48:06 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/10/28 19:53:28 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/11/29 22:56:15 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,10 @@ void	ft_putstr_fd(char const *str, int fd);
 void	ft_putendl_fd(char const *str, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
+
+void	ft_putnbr_base(long long int nbr, char *base);
+
+int		ft_n_base_counter(long long int nbr, char *base);
 
 void	*ft_memalloc(size_t size);
 
