@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 19:48:06 by bmiguel-          #+#    #+#             */
-/*   Updated: 2021/11/30 00:17:30 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2021/12/02 20:48:21 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+#include <stdarg.h>
 
 typedef struct s_list
 {
@@ -129,5 +130,23 @@ char	*get_next_line(int fd);
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
+
+int		ft_printf(const char *format, ...);
+
+void	*ft_func_select(char c);
+
+int		ft_printf_c(char c);
+
+int		ft_printf_s(char *str);
+
+int		ft_printf_p(unsigned long int nbr);
+
+int		ft_printf_d(int nbr);
+
+int		ft_printf_u(unsigned int nbr);
+
+int		ft_printf_x(unsigned int nbr);
+
+int		ft_printf_xx(unsigned int nbr);
 
 #endif

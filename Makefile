@@ -7,11 +7,17 @@ CC	=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
 RM	=	rm -f
 
+HEADER = libft.h
+
 #.c files
 SRC	= $(wildcard *.c)
 
 #Object files
 OBJ	=	$(SRC:.c=.o)
+
+#Compile with the flags
+.o.c:
+	@$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
 
 all:	$(NAME)
 
