@@ -10,7 +10,21 @@ RM	=	rm -f
 HEADER = libft.h
 
 #.c files
-SRC	= $(wildcard *.c)
+SRC	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
+ft_isprint.c ft_memchr.c ft_memcmp.c ft_striter.c ft_striteri.c\
+ft_memcpy.c ft_memmove.c ft_memset.c ft_putendl_fd.c\
+ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c\
+ft_strchr.c ft_strlcpy.c ft_strmapi.c\
+ft_strdup.c ft_split.c ft_calloc.c ft_itoa.c\
+ft_strlen.c ft_strncmp.c ft_substr.c ft_strtrim.c\
+ft_strnstr.c ft_strrchr.c ft_strjoin.c\
+ft_tolower.c ft_toupper.c ft_strlcat.c ft_strncat.c\
+ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c\
+ft_printf.c ft_printf_c.c ft_printf_d.c ft_printf_p.c\
+ft_printf_s.c ft_printf_u.c ft_printf_x.c ft_printf_xx.c\
+ft_putnbr_base.c ft_n_base_counter.c ft_n_pointer.c\
+get_next_line.c
 
 #Object files
 OBJ	=	$(SRC:.c=.o)
@@ -19,18 +33,27 @@ OBJ	=	$(SRC:.c=.o)
 .o.c:
 	@$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
 
+# Colors #
+GREEN		=	\e[38;5;82m
+YELLOW		=	\e[38;5;220m
+RED			=	\e[38;5;196;48;5;16m
+RESET		=	\e[0m
+
 all:	$(NAME)
 
-$(NAME):	$(OBJ)
-			ar rcs $(NAME) $(OBJ)
+$(NAME):    $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+	@printf "$(GREEN)libft.a  was successfully created.$(RESET)\n"
 
 clean:
-			$(RM) $(OBJ)
+	$(RM) $(OBJ)
+	@printf "$(YELLOW)Libft objects were clean.$(RESET)\n"
 
-fclean:	clean
-			$(RM) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
+	@printf "$(RED)libft.a  was removed.$(RESET)\n"
 
-re:	fclean $(NAME)
+re: fclean $(NAME)
 
 # Is just a name for a recipe to be executed when you make an explicit request. 
 # Avoid a conflict with a file of the same name, and to improve performance.
