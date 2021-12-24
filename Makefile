@@ -43,15 +43,15 @@ all:	$(NAME)
 
 $(NAME):    $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@printf "$(GREEN)libft.a  was successfully created.$(RESET)\n"
+	@printf "$(GREEN)Success, libft.a  was created.$(RESET)\n"
 
 clean:
 	$(RM) $(OBJ)
-	@printf "$(YELLOW)Libft objects were clean.$(RESET)\n"
+	@printf "$(YELLOW)Success, libft objects were removed.$(RESET)\n"
 
 fclean: clean
 	$(RM) $(NAME)
-	@printf "$(RED)libft.a  was removed.$(RESET)\n"
+	@printf "$(RED)Success, libft.a  was removed.$(RESET)\n"
 
 re: fclean $(NAME)
 
