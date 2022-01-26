@@ -7,7 +7,7 @@ CC	=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
 RM	=	rm -f
 
-HEADER = libft.h
+HEADER = ./
 
 #.c files
 SRC	= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c\
@@ -23,38 +23,39 @@ ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c\
 ft_printf.c ft_printf_c.c ft_printf_d.c ft_printf_p.c\
 ft_printf_s.c ft_printf_u.c ft_printf_x.c ft_printf_xx.c\
-ft_putnbr_base.c ft_n_base_counter.c ft_n_pointer.c\
+ft_putnbr_base.c ft_n_base_counter.c ft_n_pointer.c ft_func_select.c\
 get_next_line.c
 
 #Object files
 OBJ	=	$(SRC:.c=.o)
 
 #Compile with the flags
-.o.c:
-	@$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(HEADER)
 
 # Colors #
 GREEN		=	\e[38;5;82m
 YELLOW		=	\e[38;5;220m
-RED			=	\e[38;5;196;48;5;16m
+RED		=	\e[38;5;196;48;5;16m
 RESET		=	\e[0m
 
 all:	$(NAME)
 
 $(NAME):    $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@printf "$(GREEN)Success, libft.a  was created.$(RESET)\n"
+	@printf "$(GREEN)Success!! libft.a  has been created!!$(RESET)\n"
 
 clean:
-	$(RM) $(OBJ)
-	@printf "$(YELLOW)Success, libft objects were removed.$(RESET)\n"
+	@$(RM) $(OBJ)
+	@printf "$(YELLOW)Success, libft.a was removed.$(RESET)\n"
 
 fclean: clean
-	$(RM) $(NAME)
-	@printf "$(RED)Success, libft.a  was removed.$(RESET)\n"
+	@$(RM) $(NAME)
+	@printf "$(RED)Attention, libft.a  has been removed.$(RESET)\n"
 
 re: fclean $(NAME)
 
 # Is just a name for a recipe to be executed when you make an explicit request. 
 # Avoid a conflict with a file of the same name, and to improve performance.
 .PHONY: all clean fclean re
+
