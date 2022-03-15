@@ -34,24 +34,24 @@ OBJ	=	$(SRC:.c=.o)
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(HEADER)
 
 # Colors #
-GREEN		=	\e[38;5;82m
-YELLOW		=	\e[38;5;220m
-RED		=	\e[38;5;196;48;5;16m
-RESET		=	\e[0m
+GREEN		=	\033[0;32m
+YELLOW		=	\033[0;33m
+RED			=	\033[0;31m
+RESET       =   \033[0m
 
 all:	$(NAME)
 
 $(NAME):    $(OBJ)
+	@echo "$(YELLOW)[       Compiling libft ...      ]$(RESET)"
 	@ar rcs $(NAME) $(OBJ)
-	@printf "$(GREEN)Success!! libft.a  has been created!!$(RESET)\n"
+	@echo "$(GREEN)[    Libft.a has been created!   ]$(RESET)"
 
 clean:
 	@$(RM) $(OBJ)
-	@printf "$(YELLOW)Success, libft.a was removed.$(RESET)\n"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "$(RED)Attention, libft.a  has been removed.$(RESET)\n"
+	@echo "$(RED)[    libft.a has been removed!   ]$(RESET)"
 
 re: fclean $(NAME)
 
