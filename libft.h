@@ -6,7 +6,7 @@
 /*   By: bmiguel- <bmiguel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 19:48:06 by bmiguel-          #+#    #+#             */
-/*   Updated: 2022/05/29 18:32:27 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2022/07/31 13:16:53 by bmiguel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ void	*ft_memset(void *str, int c, size_t count);
 /*Allocate NMEMB elements of SIZE bytes each, all initialized to 0.*/
 void	*ft_calloc(size_t n, size_t size);
 
+/*Free a variable and set's it NULL*/
+void	ft_free(void **ptr);
+
 /*----------||| STR FUNCTION |||------------*/
 
 /*Replic of atoi*/
@@ -88,6 +91,12 @@ int		ft_isdigit(int arg);
 /*Checks if the arg is a printable char*/
 int		ft_isprint(int arg);
 
+/*Checks if the arg is a space char*/
+int		ft_isspace(int arg);
+
+/*Checks if the str is just space chars*/
+int		ft_isspacestr(char *str);
+
 /*Replica of tolower*/
 /*Switches every Upper case chars to Lower case in a STR*/
 int		ft_tolower(int arg);
@@ -105,6 +114,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n);
 /*Replica of strchr*/
 /*Returns the position of C in the STR*/
 char	*ft_strchr(const char *str, int c);
+
+/*Replica of strcmp*/
+/*Compares S1 and S2*/
+int		ft_strcmp(const char *s1, const char *s2);
 
 /*Replica of strncmp*/
 /*Compares N characters form S1 and S2*/
@@ -238,6 +251,12 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 /*the function ’f’. The ’del’ function is used to*/
 /*delete the content of a node if needed.*/
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/*Prints a list with str in content*/
+void	ft_lst_strprint(t_list *list);
+
+/*Prints a list with int in content*/
+void	ft_lst_intprint(t_list *list);
 
 /*-------------||| PRINTF |||---------------*/
 
